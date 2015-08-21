@@ -1,3 +1,101 @@
 .debug {
   border: 1px solid red;
 }
+
+.bkg-none {
+  background: none !important;
+}
+/*text*/
+.txt-delius{
+  font-family: 'Delius Unicase', cursive;
+  font-size: 2.5em;
+}
+.txt-lato {
+  font-family: 'Lato', sans-serif;
+  font-size: 1.3em;
+}
+
+.txt-center {
+  text-align: center;
+}
+
+.txt-gray {
+  color: gray !important;
+}
+
+.txt-light-gray {
+  color: #737373;
+}
+
+.txt-white {
+  color: white !important;
+}
+
+.txt-off-white {
+  color: #CCCCCC !important;
+}
+
+.txt-lg {
+  font-size: 5em;
+}
+
+/*positioning*/
+.block {
+  display: block;
+}
+
+/*spacing*/
+/*width*/
+.w-m {
+  width: 10em;
+}
+/*margin*/
+.m-auto {
+  margin: 0 auto;
+}
+
+.m-40-auto {
+  margin: 40px auto;
+}
+
+.m-top-m {
+  margin-top: 4%;
+}
+
+.m-bottom-m {
+  margin-bottom: 4%;
+}
+
+.m-lg {
+  margin: 10px;
+}
+
+/*padding*/
+.p-8 {
+  padding: 8px;
+}
+
+.p-10 {
+  padding: 10px;
+}
+
+/*border*/
+.b-white {
+  border: 1px solid white;
+}
+
+/*specific styles*/
+.choice-field {
+  background: rgba(225, 225, 225, 0.2) !important;
+  border: rgba(0, 0, 0, 0.6) !important;
+  font-size: 2em !important;
+  height: 60px !important;
+}
+
+.clear {
+  opacity: .6;
+}
+
+.pointer {
+  cursor: pointer;
+}
