@@ -2,31 +2,27 @@ $(document).ready(function() {
   console.log("HELLO!");
   getLocation();
 
-  var lat;
-  var lon;
-
-  console.log ("test " + lat + " " + lon);
-
   $('#zip-get-weather').on('click', function(e) {
     e.preventDefault();
     console.log('Testing')
     var zipcode = $('#zipcode').val();
     console.log('Zipcode is ' + zipcode);
-    $.ajax({
-      url: "http://api.openweathermap.org/data/2.5/weather?zip=" + zipcode +",us,&APPID=d989efa9b6afbb8803d408c2a7168b59",
-      type: 'GET',
-      dataType: 'json',
-    }).done(function(response) {
-      console.log('success', response);
-      var fahrenheit = conversions.fahrenheit(response.main.temp);
-      getWeather(fahrenheit, response.name);
-    }).fail(function() {
-      console.log('failed ', response);
-    });
-  })
-});
 
-var getWeather = function(temp, city) {
+    var getWeather = function(zipcode) {
+      $.ajax({
+        url: "http://api.openweathermap.org/data/2.5/weather?zip=" + zipcode +",us,&APPID=d989efa9b6afbb8803d408c2a7168b59",
+        type: 'GET',
+        dataType: 'json',
+      }).done(function(response) {
+        console.log('success', response);
+        var fahrenheit = conversions.fahrenheit(response.main.temp);
+        appendWeather(fahrenheit, response.name);
+      }).fail(function() {
+        console.log('failed ', response);
+      });
+    };
+
+var appendWeather = function(temp, city) {
   $('#instructions').hide();
   $('#temp').empty();
   $('#city').empty();
@@ -47,13 +43,26 @@ var conversions = (function() {
 
 function getLocation() {
     if (navigator.geolocation) {
-        navigator.geolocation.getCurrentPosition(showPosition);
+        navigator.geolocation.getCurrentPosition(locationWeather);
     } else {
         console.log("Geolocation is not supported by this browser.");
     }
 }
 
-function showPosition(position) {
+function locationWeather(position) {
     lat = position.coords.latitude;
     lon = position.coords.longitude;
+
+    $.ajax({
+      url: "http://api.openweathermap.org/data/2.5/weather?lat=" + lat +"&lon=" + lon +"&APPID=d989efa9b6afbb8803d408c2a7168b59",
+      type: 'GET',
+      dataType: 'json',
+    }).done(function(response) {
+      console.log('success', response);
+      var fahrenheit = conversions.fahrenheit(response.main.temp);
+      appendWeather(fahrenheit, response.name);
+    }).fail(function() {
+      console.log('failed ', response);
+    });
+  };
 }
