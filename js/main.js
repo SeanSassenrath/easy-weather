@@ -16,8 +16,11 @@ $(document).ready(function() {
       dataType: 'json',
     }).done(function(response) {
       console.log('success', response);
-      var fahrenheit = conversions.fahrenheit(response.main.temp);
-      appendWeather(fahrenheit, response.name);
+      var currentTempFahrenheit = conversions.fahrenheit(response.main.temp);
+      var maxTempFahrenheit = conversions.fahrenheit(response.main.temp_max);
+      var minTempFahrenheit = conversions.fahrenheit(response.main.temp_min);
+      var icon = response.weather[0].icon;
+      appendWeather(currentTempFahrenheit, maxTempFahrenheit, minTempFahrenheit, icon, response.name);
     }).fail(function() {
       console.log('failed ', response);
     });
@@ -48,12 +51,18 @@ $(document).ready(function() {
     });
   };
 
-  var appendWeather = function(temp, city) {
+  var appendWeather = function(temp, maxTemp, minTemp, icon, city) {
     $('#instructions').hide();
     $('#temp').empty();
     $('#city').empty();
+    $('#max').empty();
+    $('#min').empty();
+
     $('#temp').append(temp + " F");
     $('#city').append(city);
+    $('#max').append("hi " + maxTemp);
+    $('#min').append("lo " + minTemp);
+    // $('#icon').append('<img src="http://openweathermap.org/img/w/' + icon + '.png">');
   };
 
   var conversions = (function() {

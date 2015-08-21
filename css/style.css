@@ -62,8 +62,16 @@
   margin-top: 4%;
 }
 
+.m-top-25 {
+  margin-top: 25px;
+}
+
 .m-bottom-m {
   margin-bottom: 4%;
+}
+
+.m-bottom-40 {
+  margin-bottom: 40px;
 }
 
 .m-lg {
