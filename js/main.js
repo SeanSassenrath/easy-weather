@@ -44,8 +44,10 @@ $(document).ready(function() {
       dataType: 'json',
     }).done(function(response) {
       console.log('success', response);
-      var fahrenheit = conversions.fahrenheit(response.main.temp);
-      appendWeather(fahrenheit, response.name);
+      var maxTempFahrenheit = conversions.fahrenheit(response.main.temp_max);
+      var minTempFahrenheit = conversions.fahrenheit(response.main.temp_min);
+      // var icon = response.weather[0].icon;
+      appendWeather(currentTempFahrenheit, maxTempFahrenheit, minTempFahrenheit, response.name);
     }).fail(function() {
       console.log('failed ', response);
     });
