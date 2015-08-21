@@ -2,6 +2,11 @@ $(document).ready(function() {
   console.log("HELLO!");
   getLocation();
 
+  var lat;
+  var lon;
+
+  console.log (lat + " " + lon);
+
   $('#zip-get-weather').on('click', function(e) {
     e.preventDefault();
     console.log('Testing')
@@ -49,6 +54,6 @@ function getLocation() {
 }
 
 function showPosition(position) {
-    console.log("Latitude: " + position.coords.latitude);
-    console.log("Longitude: " + position.coords.longitude);
+    lat = position.coords.latitude;
+    lon = position.coords.longitude;
 }
