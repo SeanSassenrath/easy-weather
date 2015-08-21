@@ -19,8 +19,8 @@ $(document).ready(function() {
       var currentTempFahrenheit = conversions.fahrenheit(response.main.temp);
       var maxTempFahrenheit = conversions.fahrenheit(response.main.temp_max);
       var minTempFahrenheit = conversions.fahrenheit(response.main.temp_min);
-      var icon = response.weather[0].icon;
-      appendWeather(currentTempFahrenheit, maxTempFahrenheit, minTempFahrenheit, icon, response.name);
+      // var icon = response.weather[0].icon;
+      appendWeather(currentTempFahrenheit, maxTempFahrenheit, minTempFahrenheit, response.name);
     }).fail(function() {
       console.log('failed ', response);
     });
@@ -51,7 +51,7 @@ $(document).ready(function() {
     });
   };
 
-  var appendWeather = function(temp, maxTemp, minTemp, icon, city) {
+  var appendWeather = function(temp, maxTemp, minTemp, city) {
     $('#instructions').hide();
     $('#temp').empty();
     $('#city').empty();
