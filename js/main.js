@@ -63,5 +63,5 @@ function locationWeather(position) {
     appendWeather(fahrenheit, response.name);
   }).fail(function() {
     console.log('failed ', response);
-  });
+  })
 };
