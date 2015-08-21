@@ -44,6 +44,7 @@ $(document).ready(function() {
       dataType: 'json',
     }).done(function(response) {
       console.log('success', response);
+      var currentTempFahrenheit = conversions.fahrenheit(response.main.temp);
       var maxTempFahrenheit = conversions.fahrenheit(response.main.temp_max);
       var minTempFahrenheit = conversions.fahrenheit(response.main.temp_min);
       // var icon = response.weather[0].icon;
