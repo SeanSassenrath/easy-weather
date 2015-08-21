@@ -50,19 +50,18 @@ function getLocation() {
 }
 
 function locationWeather(position) {
-    lat = position.coords.latitude;
-    lon = position.coords.longitude;
+  lat = position.coords.latitude;
+  lon = position.coords.longitude;
 
-    $.ajax({
-      url: "http://api.openweathermap.org/data/2.5/weather?lat=" + lat +"&lon=" + lon +"&APPID=d989efa9b6afbb8803d408c2a7168b59",
-      type: 'GET',
-      dataType: 'json',
-    }).done(function(response) {
-      console.log('success', response);
-      var fahrenheit = conversions.fahrenheit(response.main.temp);
-      appendWeather(fahrenheit, response.name);
-    }).fail(function() {
-      console.log('failed ', response);
-    });
-  };
-}
+  $.ajax({
+    url: "http://api.openweathermap.org/data/2.5/weather?lat=" + lat +"&lon=" + lon +"&APPID=d989efa9b6afbb8803d408c2a7168b59",
+    type: 'GET',
+    dataType: 'json',
+  }).done(function(response) {
+    console.log('success', response);
+    var fahrenheit = conversions.fahrenheit(response.main.temp);
+    appendWeather(fahrenheit, response.name);
+  }).fail(function() {
+    console.log('failed ', response);
+  });
+};
