@@ -5,7 +5,7 @@ $(document).ready(function() {
   var lat;
   var lon;
 
-  console.log (lat + " " + lon);
+  console.log ("test " + lat + " " + lon);
 
   $('#zip-get-weather').on('click', function(e) {
     e.preventDefault();
