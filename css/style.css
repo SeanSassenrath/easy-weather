@@ -51,7 +51,7 @@
 }
 /*margin*/
 .m-auto {
-  margin: 0 auto;
+  margin: 0 auto !important;
 }
 
 .m-40-auto {
@@ -94,10 +94,14 @@
 
 /*specific styles*/
 .choice-field {
-  background: rgba(225, 225, 225, 0.3) !important;
-  border: rgba(0, 0, 0, 0.6) !important;
+  background: none !important;
+  border: none !important;
+  border-bottom: 2px solid white !important;
+  box-shadow: none !important;
   font-size: 2em !important;
   height: 60px !important;
+  width: 200px !important;
+  opacity: .6;
 }
 
 .clear {
