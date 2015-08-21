@@ -36,7 +36,7 @@
 }
 
 .txt-lg {
-  font-size: 5em;
+  font-size: 8em;
 }
 
 /*positioning*/
@@ -62,8 +62,8 @@
   margin-top: 4%;
 }
 
-.m-top-25 {
-  margin-top: 25px;
+.m-top-60 {
+  margin-top: 60px;
 }
 
 .m-bottom-m {

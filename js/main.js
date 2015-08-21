@@ -61,7 +61,7 @@ $(document).ready(function() {
     $('#max').empty();
     $('#min').empty();
 
-    $('#temp').append(temp + " F");
+    $('#temp').append(temp);
     $('#city').append(city);
     $('#max').append("hi " + maxTemp);
     $('#min').append("lo " + minTemp);
