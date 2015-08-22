@@ -87,8 +87,6 @@ $(document).ready(function() {
 
     console.log('in geolocation function');
 
-    getLocation();
-
     var getLocation = function() {
       console.log('in getlocation function');
         if (navigator.geolocation) {
