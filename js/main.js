@@ -89,7 +89,9 @@ var geolocation = (function() {
 
   var getLocation = function() {
       if (navigator.geolocation) {
-          navigator.geolocation.getCurrentPosition(latLon);
+          var location = navigator.geolocation.getCurrentPosition(latLon);
+          console.log(location);
+          return location;
       } else {
           console.log("Geolocation is not supported by this browser.");
       }
