@@ -35,8 +35,12 @@
   color: #CCCCCC !important;
 }
 
-.txt-lg {
+.txt-l {
   font-size: 8em;
+}
+
+.txt-s {
+  font-size: 2em;
 }
 
 /*positioning*/
@@ -74,7 +78,7 @@
   margin-bottom: 40px;
 }
 
-.m-lg {
+.m-l {
   margin: 10px;
 }
 
@@ -133,8 +137,18 @@
    color: white;
 }
 
-@media screen and (max-width: 500px) {
+@media screen and (max-width: 645px) {
     .txt-delius {
       font-size: 1.3em !important;
+    }
+    #max {
+      text-align: center;
+      margin-top: 0px;
+    }
+    #min {
+      text-align: center;
+    }
+    #temp {
+      margin-top: -10px;
     }
 }

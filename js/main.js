@@ -2,8 +2,8 @@ $(document).ready(function() {
   console.log("HELLO!");
   getLocation();
 
-  $('#zipcode').hide();
-  $('#get-zip-weather').hide();
+  // $('#zipcode').hide();
+  // $('#get-zip-weather').hide();
 
   $('#get-zip-weather').on('click', function(e) {
     e.preventDefault();
@@ -68,7 +68,7 @@ $(document).ready(function() {
     $('#max').empty();
     $('#min').empty();
 
-    $('#temp').append('<h1 class="txt-center txt-lg m-lg txt-white">' + temp + '</h1>');
+    $('#temp').append('<h1 class="txt-center txt-l m-l txt-white">' + temp + '</h1>');
     $('#city').append(city);
     $('#max').append("hi " + maxTemp);
     $('#min').append("lo " + minTemp);
