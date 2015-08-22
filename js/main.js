@@ -92,13 +92,14 @@ $(document).ready(function() {
     function getLocation() {
       console.log('in getlocation function');
         if (navigator.geolocation) {
-            navigator.geolocation.getCurrentPosition(latLon);
+           var test = navigator.geolocation.getCurrentPosition(latLon);
+           console.log(test);
         } else {
             console.log("Geolocation is not supported by this browser.");
         }
     };
 
-    var latLon = function(position) {
+    function latLon(position) {
       console.log('in latLon function');
       var coordinates = {
         lat: position.coords.latitude,
