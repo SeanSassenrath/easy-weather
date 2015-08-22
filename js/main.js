@@ -2,14 +2,23 @@ $(document).ready(function() {
   console.log("HELLO!");
   getLocation();
 
-  // $('#zipcode').hide();
-  // $('#get-zip-weather').hide();
+  $('#zipcode').hide();
+  $('#get-zip-weather').hide();
 
   $('#get-zip-weather').on('click', function(e) {
     e.preventDefault();
     var zipcode = $('#zipcode').val();
     console.log('Zipcode is ' + zipcode);
     getZipWeather(zipcode);
+  });
+
+   $('html, body').keypress(function (e) {
+   var key = e.which;
+   if(key == 13)
+    {
+      $("#get-zip-weather").click();
+      return false;
+    }
   });
 
   var getZipWeather = function(zipcode) {
