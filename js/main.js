@@ -2,8 +2,8 @@ $(document).ready(function() {
   console.log("HELLO!");
   getLocation();
 
-  // $('#zipcode').hide();
-  // $('#get-zip-weather').hide();
+  $('#zipcode').hide();
+  $('#get-zip-weather').hide();
 
   $('#get-zip-weather').on('click', function(e) {
     e.preventDefault();
