@@ -173,7 +173,12 @@
     }
     #nav-container {
       height: 50px !important;
+      width: 100%;
       background-image: url('../img/cloud-small.png') !important;
+      background-position: 0px 0px;
+      background-repeat: repeat-x;
+
+      animation: moveClouds 60s linear infinite;
     }
     #get-zip-weather {
       margin-top: 10px;
@@ -184,4 +189,20 @@
   #find-weather-small {
     display: none;
   }
+}
+
+/*animations*/
+@keyframes moveClouds {
+  from { background-position: 0 0; }
+  to { background-position: 100% 0; }
+}
+
+#nav-container {
+/*  width: 560px;
+  height: 400px; */
+  background-image: url(../img/cloud.png);
+  background-position: 0px 0px;
+  background-repeat: repeat-x;
+
+  animation: moveClouds 60s linear infinite;
 }
