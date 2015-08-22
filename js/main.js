@@ -87,7 +87,7 @@ $(document).ready(function() {
 
     console.log('in geolocation function');
 
-    getlocation();
+    getLocation();
 
     function getLocation() {
       console.log('in getlocation function');
