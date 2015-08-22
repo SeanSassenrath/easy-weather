@@ -85,7 +85,10 @@ $(document).ready(function() {
 
   var geolocation = (function() {
 
+    console.log('in geolocation function');
+
     var getLocation = function() {
+      console.log('in getlocation function');
         if (navigator.geolocation) {
             var location = navigator.geolocation.getCurrentPosition(latLon);
             console.log(location);
@@ -96,6 +99,7 @@ $(document).ready(function() {
     };
 
     function latLon(position) {
+      console.log('in latLon function');
       var coordinates = {
         lat: position.coords.latitude,
         lon: position.coords.longitude
@@ -104,7 +108,7 @@ $(document).ready(function() {
     };
 
     return {
-      coords: getLocation
+      coords: getLocation()
     }
   })()
 
