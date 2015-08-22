@@ -87,7 +87,9 @@ $(document).ready(function() {
 
     console.log('in geolocation function');
 
-    var getLocation = function() {
+    getlocation();
+
+    function getLocation() {
       console.log('in getlocation function');
         if (navigator.geolocation) {
             navigator.geolocation.getCurrentPosition(latLon);
