@@ -87,28 +87,29 @@ $(document).ready(function() {
 
     console.log('in geolocation function');
 
+    getLocation();
+
     var getLocation = function() {
       console.log('in getlocation function');
         if (navigator.geolocation) {
-            var location = navigator.geolocation.getCurrentPosition(latLon);
-            console.log(location);
-            return location;
+            navigator.geolocation.getCurrentPosition(latLon);
         } else {
             console.log("Geolocation is not supported by this browser.");
         }
     };
 
-    function latLon(position) {
+    var latLon = function(position) {
       console.log('in latLon function');
       var coordinates = {
         lat: position.coords.latitude,
         lon: position.coords.longitude
       }
+      console.log('coordinates: ', coordinates);
       return coordinates;
     };
 
     return {
-      coords: getLocation()
+      coords: latLon
     }
   })()
 
