@@ -19,6 +19,9 @@ $(document).ready(function() {
       dataType: 'json',
     }).done(function(response) {
       console.log('success', response);
+      $("html, body").animate(
+        {scrollTop: "0px"}, "slow"
+      );
       $('#zipcode').show();
       $('#get-zip-weather').show();
       var currentTempFahrenheit = conversions.fahrenheit(response.main.temp);
