@@ -83,29 +83,29 @@ $(document).ready(function() {
     }
   })()
 
-});
+  var geolocation = (function() {
 
-var geolocation = (function() {
+    var getLocation = function() {
+        if (navigator.geolocation) {
+            var location = navigator.geolocation.getCurrentPosition(latLon);
+            console.log(location);
+            return location;
+        } else {
+            console.log("Geolocation is not supported by this browser.");
+        }
+    };
 
-  var getLocation = function() {
-      if (navigator.geolocation) {
-          var location = navigator.geolocation.getCurrentPosition(latLon);
-          console.log(location);
-          return location;
-      } else {
-          console.log("Geolocation is not supported by this browser.");
+    function latLon(position) {
+      var coordinates = {
+        lat: position.coords.latitude,
+        lon: position.coords.longitude
       }
-  };
+      return coordinates;
+    };
 
-  function latLon(position) {
-    var coordinates = {
-      lat: position.coords.latitude,
-      lon: position.coords.longitude
+    return {
+      coords: getLocation
     }
-    return coordinates;
-  };
+  })()
 
-  return {
-    coords: getLocation
-  }
-})()
+});
