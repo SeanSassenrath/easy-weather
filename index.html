@@ -21,7 +21,7 @@
             <ul class="title-area">
               <li class="name">
                 <h1>
-                  <a class="txt-off-white txt-lato clear" href="#">Easy Weather</a>
+                  <a class="txt-off-white txt-lato clear" id="title" href="#">Easy Weather</a>
                 </h1>
               </li>
             </ul>
@@ -42,7 +42,7 @@
       <div>
         <div class="row">
           <div class="small-12 ">
-            <h2 class="txt-center txt-white txt-delius m-top-m">Welcome to Easy Weather!</h2>
+            <h2 class="txt-center txt-white txt-delius m-top-m" id="welcome">Welcome to Easy Weather!</h2>
             <!-- <h4 class="txt-center txt-white clear">degrees in fahrenheit</h4> -->
           </div>
           <div class="small-12 ">
@@ -60,15 +60,15 @@
     </div> -->
 
     <div class="row">
-      <div class="small-12 medium-4 columns ">
-        <h1></h1>
+      <div class="small-12 medium-4 columns">
+        <h1 class="txt-center txt-white clear" id="find-weather-small" style="font-size: 1.5em !important;">Finding your weather...</h1>
       </div>
-      <div class="small-12 medium-4 columns ">
-        <div id="temp">
-          <h1 class="txt-center txt-white clear" style="font-size: 1.5em !important;;">Finding your weather...</h1>
+      <div class="small-6 medium-4 columns">
+        <div id="temp-container">
+          <h1 class="txt-center txt-white clear" id="find-weather-big" style="font-size: 1.5em !important;">Finding your weather...</h1>
         </div>
       </div>
-      <div class="small-12 medium-4 columns ">
+      <div class="small-6 medium-4 columns">
         <h3 class=" m-bottom-m txt-white txt-s clear m-top-60 " id="max"></h3>
         <h3 class=" m-bottom-m txt-light-gray txt-s clear m-bottom-40 " id="min"></h3>
       </div>

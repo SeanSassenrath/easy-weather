@@ -2,8 +2,8 @@ $(document).ready(function() {
   console.log("HELLO!");
   getLocation();
 
-  $('#zipcode').hide();
-  $('#get-zip-weather').hide();
+  // $('#zipcode').hide();
+  // $('#get-zip-weather').hide();
 
   $('#get-zip-weather').on('click', function(e) {
     e.preventDefault();
@@ -62,13 +62,13 @@ $(document).ready(function() {
   };
 
   var appendWeather = function(temp, maxTemp, minTemp, city) {
-    $('#instructions').hide();
-    $('#temp').empty();
+    $('#find-weather-small').empty();
+    $('#temp-container').empty();
     $('#city').empty();
     $('#max').empty();
     $('#min').empty();
 
-    $('#temp').append('<h1 class="txt-center txt-l m-l txt-white">' + temp + '</h1>');
+    $('#temp-container').append('<h1 class="txt-center txt-l m-l txt-white" id="temp">' + temp + '</h1>');
     $('#city').append(city);
     $('#max').append("hi " + maxTemp);
     $('#min').append("lo " + minTemp);

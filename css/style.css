@@ -142,13 +142,29 @@
       font-size: 1.3em !important;
     }
     #max {
-      text-align: center;
-      margin-top: 0px;
+      text-align: left;
+      margin-top: 50px;
     }
     #min {
-      text-align: center;
+      text-align: left;
     }
     #temp {
-      margin-top: -10px;
+      margin: 5 -20px 0 0;
+      text-align: right;
     }
+    #welcome {
+      display: none;
+    }
+    #title {
+      text-align: left;
+    }
+    #find-weather-big {
+      display: none;
+    }
+}
+
+@media screen and (min-width: 646px) {
+  #find-weather-small {
+    display: none;
+  }
 }
