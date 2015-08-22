@@ -108,6 +108,12 @@
   opacity: .6;
 }
 
+.degree-symbol {
+  font-size: .5em;
+  position: absolute;
+  top: 30;
+}
+
 .clear {
   opacity: .6;
 }
@@ -137,7 +143,7 @@
    color: white;
 }
 
-@media screen and (max-width: 645px) {
+@media only screen and (max-width: 645px) {
     .txt-delius {
       font-size: 1.3em !important;
     }
@@ -150,7 +156,7 @@
     }
     #temp {
       margin: 5 -20px 0 0;
-      text-align: right;
+      text-align: center;
     }
     #welcome {
       display: none;
