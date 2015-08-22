@@ -1,6 +1,6 @@
 $(document).ready(function() {
   console.log("HELLO!");
-  getLocation();
+  // getLocation();
 
   $('#zipcode').hide();
   $('#get-zip-weather').hide();
@@ -9,10 +9,10 @@ $(document).ready(function() {
     e.preventDefault();
     var zipcode = $('#zipcode').val();
     console.log('Zipcode is ' + zipcode);
-    getZipWeather(zipcode);
+    weatherByZip(zipcode);
   });
 
-  var getZipWeather = function(zipcode) {
+  var weatherByZip = function(zipcode) {
     $.ajax({
       url: "http://api.openweathermap.org/data/2.5/weather?zip=" + zipcode +",us,&APPID=d989efa9b6afbb8803d408c2a7168b59",
       type: 'GET',
@@ -31,20 +31,17 @@ $(document).ready(function() {
     });
   };
 
-  function getLocation() {
-      if (navigator.geolocation) {
-          navigator.geolocation.getCurrentPosition(locationWeather);
-      } else {
-          console.log("Geolocation is not supported by this browser.");
-      }
-  }
+  // function getLocation() {
+  //     if (navigator.geolocation) {
+  //         navigator.geolocation.getCurrentPosition(locationWeather);
+  //     } else {
+  //         console.log("Geolocation is not supported by this browser.");
+  //     }
+  // }
 
-  function locationWeather(position) {
-    lat = position.coords.latitude;
-    lon = position.coords.longitude;
-
+  var weatherByLocation = function(geolocation) {
     $.ajax({
-      url: "http://api.openweathermap.org/data/2.5/weather?lat=" + lat +"&lon=" + lon +"&APPID=d989efa9b6afbb8803d408c2a7168b59",
+      url: "http://api.openweathermap.org/data/2.5/weather?lat=" + geolocation.coords.lat +"&lon=" + geolocation.coords.lon +"&APPID=d989efa9b6afbb8803d408c2a7168b59",
       type: 'GET',
       dataType: 'json',
     }).done(function(response) {
@@ -87,3 +84,26 @@ $(document).ready(function() {
   })()
 
 });
+
+var geolocation = (function() {
+
+  var getLocation = function() {
+      if (navigator.geolocation) {
+          navigator.geolocation.getCurrentPosition(latLon);
+      } else {
+          console.log("Geolocation is not supported by this browser.");
+      }
+  };
+
+  function latLon(position) {
+    var coordinates = {
+      lat: position.coords.latitude,
+      lon: position.coords.longitude
+    }
+    return coordinates;
+  };
+
+  return {
+    coords: getLocation
+  }
+})()
