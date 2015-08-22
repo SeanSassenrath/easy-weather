@@ -111,3 +111,30 @@
 .pointer {
   cursor: pointer;
 }
+
+.bkg-sky-blue {
+  background-color: #5CC0D4;
+}
+
+/*placeholder style*/
+::-webkit-input-placeholder {
+   color: white;
+}
+
+:-moz-placeholder { /* Firefox 18- */
+   color: white;
+}
+
+::-moz-placeholder {  /* Firefox 19+ */
+   color: white;
+}
+
+:-ms-input-placeholder {
+   color: white;
+}
+
+@media screen and (max-width: 500px) {
+    .txt-delius {
+      font-size: 1.3em !important;
+    }
+}

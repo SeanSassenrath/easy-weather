@@ -2,6 +2,9 @@ $(document).ready(function() {
   console.log("HELLO!");
   getLocation();
 
+  $('#zipcode').hide();
+  $('#get-zip-weather').hide();
+
   $('#get-zip-weather').on('click', function(e) {
     e.preventDefault();
     var zipcode = $('#zipcode').val();
@@ -16,6 +19,8 @@ $(document).ready(function() {
       dataType: 'json',
     }).done(function(response) {
       console.log('success', response);
+      $('#zipcode').show();
+      $('#get-zip-weather').show();
       var currentTempFahrenheit = conversions.fahrenheit(response.main.temp);
       var maxTempFahrenheit = conversions.fahrenheit(response.main.temp_max);
       var minTempFahrenheit = conversions.fahrenheit(response.main.temp_min);
@@ -44,6 +49,8 @@ $(document).ready(function() {
       dataType: 'json',
     }).done(function(response) {
       console.log('success', response);
+      $('#zipcode').show();
+      $('#get-zip-weather').show();
       var currentTempFahrenheit = conversions.fahrenheit(response.main.temp);
       var maxTempFahrenheit = conversions.fahrenheit(response.main.temp_max);
       var minTempFahrenheit = conversions.fahrenheit(response.main.temp_min);
@@ -61,7 +68,7 @@ $(document).ready(function() {
     $('#max').empty();
     $('#min').empty();
 
-    $('#temp').append(temp);
+    $('#temp').append('<h1 class="txt-center txt-lg m-lg txt-white">' + temp + '</h1>');
     $('#city').append(city);
     $('#max').append("hi " + maxTemp);
     $('#min').append("lo " + minTemp);
