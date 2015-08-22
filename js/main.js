@@ -1,6 +1,6 @@
 $(document).ready(function() {
   console.log("HELLO!");
-  // getLocation();
+  getLocation();
 
   $('#zipcode').hide();
   $('#get-zip-weather').hide();
@@ -9,10 +9,10 @@ $(document).ready(function() {
     e.preventDefault();
     var zipcode = $('#zipcode').val();
     console.log('Zipcode is ' + zipcode);
-    weatherByZip(zipcode);
+    getZipWeather(zipcode);
   });
 
-  var weatherByZip = function(zipcode) {
+  var getZipWeather = function(zipcode) {
     $.ajax({
       url: "http://api.openweathermap.org/data/2.5/weather?zip=" + zipcode +",us,&APPID=d989efa9b6afbb8803d408c2a7168b59",
       type: 'GET',
@@ -31,17 +31,20 @@ $(document).ready(function() {
     });
   };
 
-  // function getLocation() {
-  //     if (navigator.geolocation) {
-  //         navigator.geolocation.getCurrentPosition(locationWeather);
-  //     } else {
-  //         console.log("Geolocation is not supported by this browser.");
-  //     }
-  // }
+  function getLocation() {
+      if (navigator.geolocation) {
+          navigator.geolocation.getCurrentPosition(locationWeather);
+      } else {
+          console.log("Geolocation is not supported by this browser.");
+      }
+  }
 
-  var weatherByLocation = function(geolocation) {
+  function locationWeather(position) {
+    lat = position.coords.latitude;
+    lon = position.coords.longitude;
+
     $.ajax({
-      url: "http://api.openweathermap.org/data/2.5/weather?lat=" + geolocation.coords.lat +"&lon=" + geolocation.coords.lon +"&APPID=d989efa9b6afbb8803d408c2a7168b59",
+      url: "http://api.openweathermap.org/data/2.5/weather?lat=" + lat +"&lon=" + lon +"&APPID=d989efa9b6afbb8803d408c2a7168b59",
       type: 'GET',
       dataType: 'json',
     }).done(function(response) {
@@ -80,37 +83,6 @@ $(document).ready(function() {
     }
     return {
       fahrenheit: fahrenheit
-    }
-  })()
-
-  var geolocation = (function() {
-
-    console.log('in geolocation function');
-
-    getLocation();
-
-    function getLocation() {
-      console.log('in getlocation function');
-        if (navigator.geolocation) {
-           var test = navigator.geolocation.getCurrentPosition(latLon);
-           console.log(test);
-        } else {
-            console.log("Geolocation is not supported by this browser.");
-        }
-    };
-
-    function latLon(position) {
-      console.log('in latLon function');
-      var coordinates = {
-        lat: position.coords.latitude,
-        lon: position.coords.longitude
-      }
-      console.log('coordinates: ', coordinates);
-      return coordinates;
-    };
-
-    return {
-      coords: latLon
     }
   })()
 
