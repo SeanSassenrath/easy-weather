@@ -160,6 +160,7 @@
     }
     #find-weather-big {
       display: none;
+      text-align: center;
     }
 }
 
