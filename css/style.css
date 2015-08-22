@@ -162,6 +162,13 @@
       display: none;
       text-align: center;
     }
+    nav {
+      display: none;
+    }
+    #nav-container {
+      height: 50px !important;
+      background-image: url('../img/cloud-small.png') !important;
+    }
 }
 
 @media screen and (min-width: 646px) {
