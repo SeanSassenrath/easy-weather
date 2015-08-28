@@ -2,9 +2,6 @@ $(document).ready(function() {
   console.log("HELLO!");
   getLocation();
 
-  $('#zipcode').hide();
-  $('#get-zip-weather').hide();
-
   $('#get-zip-weather').on('click', function(e) {
     e.preventDefault();
     var zipcode = $('#zipcode').val();
@@ -31,8 +28,6 @@ $(document).ready(function() {
       $("html, body").animate(
         {scrollTop: "0px"}, "slow"
       );
-      $('#zipcode').show();
-      $('#get-zip-weather').show();
       var currentTempFahrenheit = conversions.fahrenheit(response.main.temp);
       var maxTempFahrenheit = conversions.fahrenheit(response.main.temp_max);
       var minTempFahrenheit = conversions.fahrenheit(response.main.temp_min);
