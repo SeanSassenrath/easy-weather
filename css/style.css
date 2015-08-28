@@ -82,6 +82,10 @@
   margin-bottom: 40px;
 }
 
+.m-bottom-10 {
+  margin-bottom: 10px;
+}
+
 .m-l {
   margin: 10px;
 }
@@ -101,6 +105,10 @@
 }
 
 /*specific styles*/
+ul {
+  list-style-type: none;
+}
+
 .choice-field {
   background: none !important;
   border: none !important;
