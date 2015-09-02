@@ -2,11 +2,17 @@ $(document).ready(function() {
   console.log("HELLO!");
   getLocation();
 
+  var lat;
+  var lon;
+
   setInterval(function(){
-    if(getLocation() === undefined) {
-      console.log("not getting a location")
-    }
-    console.log("We got a location!");
+    console.log(lat);
+    console.log(lon);
+    // if(getLocation() === undefined) {
+    //   console.log("not getting a location")
+    // } else {
+    //   console.log("We got a location!");
+    // }
   }, 5000);
 
   $('#get-zip-weather').on('click', function(e) {
