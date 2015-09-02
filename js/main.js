@@ -2,6 +2,13 @@ $(document).ready(function() {
   console.log("HELLO!");
   getLocation();
 
+  setInterval(function(){
+    if(getLocation() === undefined) {
+      console.log("not getting a location")
+    }
+    console.log("We got a location!");
+  }, 5000);
+
   $('#get-zip-weather').on('click', function(e) {
     e.preventDefault();
     var zipcode = $('#zipcode').val();
