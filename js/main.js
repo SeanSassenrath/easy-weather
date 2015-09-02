@@ -8,11 +8,11 @@ $(document).ready(function() {
   setInterval(function(){
     console.log(lat);
     console.log(lon);
-    // if(getLocation() === undefined) {
-    //   console.log("not getting a location")
-    // } else {
-    //   console.log("We got a location!");
-    // }
+    if(lat === undefined && lon === undefined) {
+      console.log("not getting a location")
+    } else {
+      console.log("We got a location!");
+    }
   }, 5000);
 
   $('#get-zip-weather').on('click', function(e) {
