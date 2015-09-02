@@ -5,11 +5,13 @@ $(document).ready(function() {
   var lat;
   var lon;
 
-  setInterval(function(){
+  setTimeout(function(){
     console.log(lat);
     console.log(lon);
     if(lat === undefined && lon === undefined) {
       console.log("not getting a location")
+      $("#find-weather-big").html("Oops...can't find your location.<br>Ensure geolocation is turned on or use zipcode.");
+      $("#find-weather-small").html("Oops...can't find your location.<br>Ensure geolocation is turned on or use zipcode.");
     } else {
       console.log("We got a location!");
     }
